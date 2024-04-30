@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+import 'animate.css';
 // import './styles.css';
 
 // import required modules
@@ -17,13 +18,15 @@ const Extratwo = () => {
     <Swiper
       navigation={true}
       modules={[Navigation]}
-      className="mySwiper my-8 mt-20 py-12 lg:mt-28 bg-gray-200"
+      className="mySwiper my-16  mt-20  lg:mt-28 bg-gray-200"
+      data-aos="zoom-in"
+      data-aos-duration="1500"
     >
       <SwiperSlide>
-        <h1 className="text-center text-3xl font-semibold p-16">
+        <h1 className="animate__fadeInUpBig text-center text-3xl font-semibold p-20">
           OUR CLIENT’S WORDS
         </h1>
-        <p className="font-normal mx-5 lg:mx-24">
+        <p className="font-normal mx-5 lg:mx-24 animate__fadeInLeftBig">
           "I recently booked a trip with Wanderlust Adventures, and I couldn't
           be happier with the experience! From the moment I contacted them to
           inquire about tours to the last day of my trip, everything was
@@ -36,10 +39,12 @@ const Extratwo = () => {
           an unforgettable journey, and I can't wait to book another trip with
           Wanderlust Adventures in the future!"
         </p>
-        <p className="text-end mr-10 p-8">-"Alexander Xafier"</p>
+        <p className="text-end mr-10 p-8 animate__fadeInLeftBig">
+          -"Jamie Hunt"
+        </p>
       </SwiperSlide>
       <SwiperSlide>
-        <h1 className="text-center text-3xl font-semibold p-16">
+        <h1 className="text-center text-3xl font-semibold p-20">
           OUR CLIENT’S WORDS
         </h1>
         <p className="font-normal mx-5 lg:mx-24">
@@ -52,11 +57,11 @@ const Extratwo = () => {
           Horizon Travels truly made our vacation memorable, and we highly
           recommend them to anyone looking for a stress-free travel experience!"
         </p>
-        <p className="text-end mr-10 p-8">-"Alexander Xafier"</p>
+        <p className="text-end mr-10 p-8">-"Perry Long"</p>
       </SwiperSlide>
 
       <SwiperSlide>
-        <h1 className="text-center text-3xl font-semibold p-16">
+        <h1 className="text-center text-3xl font-semibold p-20">
           OUR CLIENT’S WORDS
         </h1>
         <p className="font-normal mx-5 lg:mx-24">
@@ -71,10 +76,10 @@ const Extratwo = () => {
           SafeJourney Tours to anyone looking for a safe and enjoyable travel
           experience!"
         </p>
-        <p className="text-end mr-10 p-8">-"Alexander Xafier"</p>
+        <p className="text-end mr-10 p-8">-"Alexander Doe"</p>
       </SwiperSlide>
       <SwiperSlide>
-        <h1 className="text-center text-3xl font-semibold p-16">
+        <h1 className="text-center text-3xl font-semibold p-20">
           OUR CLIENT’S WORDS
         </h1>
         <p className="font-normal mx-5 lg:mx-24">
@@ -89,10 +94,10 @@ const Extratwo = () => {
           thank Summit Adventures enough for pushing me out of my comfort zone
           and helping me achieve my goals!"
         </p>
-        <p className="text-end mr-10 p-8">-"Alexander Xafier"</p>
+        <p className="text-end mr-10 p-8">-"Alexander Michale"</p>
       </SwiperSlide>
       <SwiperSlide>
-        <h1 className="text-center text-3xl font-semibold p-16">
+        <h1 className="text-center text-3xl font-semibold p-20">
           OUR CLIENT’S WORDS
         </h1>
         <p className="font-normal mx-5 lg:mx-24">

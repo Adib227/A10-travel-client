@@ -10,14 +10,14 @@ const Footer = () => {
             href="#"
             className="flex justify-center space-x-3 lg:justify-start"
           >
-            <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full ">
               <img
                 className="w-6 h-8"
                 src="https://i.ibb.co/3pLN798/logooo.png"
                 alt=""
               />
             </div>
-            <span className="self-center text-2xl font-semibold">
+            <span className="self-center text-3xl font-semibold">
               IQONIC TRAVEL
             </span>
           </a>

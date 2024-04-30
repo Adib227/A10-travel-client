@@ -1,9 +1,14 @@
 import React from 'react';
+import 'animate.css';
 
 const Extra = () => {
   return (
-    <div>
-      <div className="rounded-badge grid py-20 bg-[#FD6E0A33] my-8">
+    <div
+      className="animate__zoomIn"
+      data-aos="zoom-in"
+      data-aos-duration="1500"
+    >
+      <div className="animate__zoomIn rounded-badge grid py-20 bg-[#FD6E0A33] my-8">
         <div className=" max-w-full mx-auto text-2xl lg:text-4xl font-semibold">
           Out Partners
         </div>

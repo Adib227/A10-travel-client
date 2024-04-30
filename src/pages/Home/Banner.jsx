@@ -18,6 +18,8 @@ const Banner = () => {
       navigation={true}
       modules={[Navigation]}
       className="mySwiper my-8 mt-20 lg:mt-16"
+      data-aos="zoom-in"
+      data-aos-duration="1500"
     >
       <SwiperSlide>
         <img

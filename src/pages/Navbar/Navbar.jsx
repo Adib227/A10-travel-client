@@ -51,7 +51,11 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100">
-      <div className="navbar-start mt-8">
+      <div
+        className="navbar-start mt-8"
+        data-aos="fade-right"
+        data-aos-duration="2000"
+      >
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -86,14 +90,19 @@ const Navbar = () => {
           IQONIC TRAVEL
         </a>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div
+        className="navbar-center hidden lg:flex"
+        data-aos="fade-down"
+        data-aos-duration="2000"
+      >
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
-      <div className="navbar-end">
-        {/* <Link to="/login">
-          {' '}
-          <button className="btn btn-active">Login</button>
-        </Link> */}
+      <div className="navbar-end" data-aos="fade-left" data-aos-duration="2000">
+        <input
+          type="checkbox"
+          value="synthwave"
+          className="toggle theme-controller"
+        />
         {user ? (
           <>
             <span>{user.email}</span>
