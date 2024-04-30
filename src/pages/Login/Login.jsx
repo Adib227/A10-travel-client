@@ -8,22 +8,11 @@ import { AuthContext } from '../../Providers/AuthProvider';
 const Login = () => {
   const { newUser, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
+  console.log(newUser);
   const navigate = useNavigate();
 
   const [user, setUser] = useState();
   const auth = getAuth();
-  // const googleProvider = new GoogleAuthProvider();
-  // const githubProvider = new GithubAuthProvider();
-
-  // const handleGoogleSignIn = () => {
-  //   signInWithGoogle()
-  //     .then(result => {
-  //       console.log(result.user);
-  //     })
-  //     .catch(error => {
-  //       console.error(error);
-  //     });
-  // };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
