@@ -17,15 +17,15 @@ const Navbar = () => {
         <>
           {' '}
           <li>
-            <NavLink className to="/updateProfile">
-              Update Profile
+            <NavLink className to="/addTouristSpot">
+              Add Tourist Spot
             </NavLink>
           </li>{' '}
         </>
       )}
       <li>
-        <NavLink className to="/aboutUs">
-          About us
+        <NavLink className to="/myList">
+          My List
         </NavLink>
       </li> */}
     </>
@@ -61,8 +61,8 @@ const Navbar = () => {
         <a className="btn btn-ghost text-2xl lg:text-3xl -mt-2">
           {' '}
           <img
-            className="w-8 lg:w-10 -mt-2 "
-            src="https://ibb.co/LYR81x8"
+            className=" -mt-2 "
+            src="https://i.ibb.co/3pLN798/logooo.png"
             alt=""
           />{' '}
           IQONIC TRAVEL
