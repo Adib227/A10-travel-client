@@ -1,13 +1,88 @@
-import React from 'react';
+import { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, signOut } from 'firebase/auth';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
+  const { newUser, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState();
+  const auth = getAuth();
+  // const googleProvider = new GoogleAuthProvider();
+  // const githubProvider = new GithubAuthProvider();
+
+  // const handleGoogleSignIn = () => {
+  //   signInWithGoogle()
+  //     .then(result => {
+  //       console.log(result.user);
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+  // };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then(result => {
+        alert('Logged in successfully');
+        console.log(result.user);
+        navigate('/');
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+  const handleGithubSignIn = () => {
+    signInWithGithub()
+      .then(result => {
+        alert('Logged in successfully');
+        console.log(result.user);
+        navigate('/');
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+  const handleLogin = e => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+
+    newUser(email, password)
+      .then(result => {
+        console.log(result.user);
+        alert('Logged in successfully');
+        e.target.reset();
+        navigate('/');
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(result => {
+        setUser(null);
+        alert('Signed Out successfully');
+        console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
       <Helmet>
-        <title>Ten Build - Login</title>
+        <title>IQONIC TRAVEL - Login</title>
       </Helmet>
       <div className="hero min-h-screen bg-base-200 my-12 rounded-lg">
         <div className="hero-content flex-col ">

@@ -5,7 +5,7 @@ const Errorpage = () => {
   return (
     <div>
       <Helmet>
-        <title>Ten Build - 404</title>
+        <title>IQONIC TRAVEL - 404</title>
       </Helmet>
       <section className="flex items-center h-full lg:p-16 dark:bg-gray-200 dark:text-gray-800 m-16">
         <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './Layouts/Root.jsx';
@@ -10,6 +9,9 @@ import Home from './pages/Home/Home.jsx';
 import Errorpage from './pages/Errorpage/Errorpage.jsx';
 import AddTouristSpot from './pages/AddTouristSpot/AddTouristSpot.jsx';
 import MyList from './pages/MyList/MyList.jsx';
+import PrivateRoutes from './Routes/PrivateRoute.jsx';
+import Login from './pages/Login/Login.jsx';
+import Register from './pages/Register/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,11 +29,27 @@ const router = createBrowserRouter([
       },
       {
         path: '/addTouristSpot',
-        element: <AddTouristSpot></AddTouristSpot>,
+        element: (
+          <PrivateRoutes>
+            <AddTouristSpot></AddTouristSpot>
+          </PrivateRoutes>
+        ),
       },
       {
         path: '/myList',
-        element: <MyList></MyList>,
+        element: (
+          <PrivateRoutes>
+            <MyList></MyList>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: '/login',
+        element: <Login></Login>,
+      },
+      {
+        path: '/register',
+        element: <Register></Register>,
       },
     ],
   },
