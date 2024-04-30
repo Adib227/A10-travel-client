@@ -13,6 +13,7 @@ import Login from './pages/Login/Login.jsx';
 import Register from './pages/Register/Register.jsx';
 import AuthProvider from './Providers/AuthProvider.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
+import Update from './pages/Home/Update.jsx';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>,
+      },
+      {
+        path: '/updatePage',
+        element: <Update></Update>,
       },
     ],
   },

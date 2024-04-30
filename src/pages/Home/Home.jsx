@@ -1,13 +1,18 @@
 import Banner from './Banner';
 import Extra from './Extra';
-import Slider from './Slider';
+import Extratwo from './Extratwo';
 
 const Home = () => {
   return (
-    <div className="max-w-6xl mx-auto">
-      <Banner></Banner>
-      <Slider></Slider>
-      <Extra></Extra>
+    <div>
+      <div className="max-w-6xl mx-auto">
+        <Banner></Banner>
+
+        <Extra></Extra>
+      </div>
+      <div className="max-w-fulls">
+        <Extratwo></Extratwo>
+      </div>
     </div>
   );
 };

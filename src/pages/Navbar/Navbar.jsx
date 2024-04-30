@@ -25,19 +25,27 @@ const Navbar = () => {
         </NavLink>
       </li>
       {
-        <>
-          <li>
-            <NavLink className to="/addTouristSpot">
-              Add Tourist Spot
-            </NavLink>
-          </li>
-        </>
+        <li>
+          <NavLink className to="/addTouristSpot">
+            Add Tourist Spot
+          </NavLink>
+        </li>
       }
       <li>
         <NavLink className to="/myList">
           My List
         </NavLink>
       </li>
+      {user && (
+        <>
+          {' '}
+          <li>
+            <NavLink className to="/updatePage">
+              Update Page
+            </NavLink>
+          </li>{' '}
+        </>
+      )}
     </>
   );
 
