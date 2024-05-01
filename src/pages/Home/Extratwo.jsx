@@ -21,6 +21,8 @@ const Extratwo = () => {
       className="mySwiper my-16  mt-20  lg:mt-28 bg-gray-200"
       data-aos="zoom-in"
       data-aos-duration="1500"
+      // data-aos="fade-down"
+      // data-aos-duration="2000"
     >
       <SwiperSlide>
         <h1 className="animate__fadeInUpBig text-center text-3xl font-semibold p-20">
@@ -94,7 +96,7 @@ const Extratwo = () => {
           thank Summit Adventures enough for pushing me out of my comfort zone
           and helping me achieve my goals!"
         </p>
-        <p className="text-end mr-10 p-8">-"Alexander Michale"</p>
+        <p className="text-end mr-10 p-8">-"Alexander Michael"</p>
       </SwiperSlide>
       <SwiperSlide>
         <h1 className="text-center text-3xl font-semibold p-20">
@@ -111,7 +113,7 @@ const Extratwo = () => {
           that I'll cherish forever. Thank you, WildExpeditions, for an
           incredible journey!"
         </p>
-        <p className="text-end mr-10 p-8">-"Alexander Xafier"</p>
+        <p className="text-end mr-10 p-8">-"Alexander Xavier"</p>
       </SwiperSlide>
     </Swiper>
   );
