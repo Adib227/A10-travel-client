@@ -7,6 +7,11 @@ const Extra = () => {
       className="animate__zoomIn"
       data-aos="zoom-in"
       data-aos-duration="1500"
+      // style={{
+      //   backgroundImage: `url("https://i.ibb.co/rbdHRRV/maldives-3220702-640.jpg")`,
+      //   backgroundRepeat: 'no-repeat',
+      //   backgroundSize: 'cover',
+      // }}
     >
       <div className="animate__zoomIn rounded-badge grid py-20 bg-[#FD6E0A33] my-8">
         <div className=" max-w-full mx-auto text-2xl lg:text-4xl font-semibold">

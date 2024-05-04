@@ -1,9 +1,11 @@
 import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Tippy from '@tippyjs/react';
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
+  // const [displayName, photoURL] = user;
 
   const handleLogOut = () => {
     logOut();
@@ -80,15 +82,18 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl lg:text-3xl -mt-2">
-          {' '}
-          <img
-            className=" -mt-2 "
-            src="https://i.ibb.co/WymXq0G/logooo.png"
-            alt=""
-          />{' '}
-          IQONIC TRAVEL
-        </a>
+
+        <Link to="/">
+          <a className="btn btn-ghost text-2xl lg:text-3xl -mt-2">
+            {' '}
+            <img
+              className=" -mt-2 "
+              src="https://i.ibb.co/WymXq0G/logooo.png"
+              alt=""
+            />{' '}
+            IQONIC TRAVEL
+          </a>
+        </Link>
       </div>
       <div
         className="navbar-center hidden lg:flex"
@@ -105,14 +110,29 @@ const Navbar = () => {
         />
         {user ? (
           <>
-            <span>{user.email}</span>
-            <button onClick={handleLogOut} className="btn btn-active">
-              Sign Out
-            </button>
+            <Tippy
+              content={user.email}
+              className="bg-pink-500 text-black font-bold p-4"
+            >
+              <img className="w-10 rounded-full" alt="" src={user.photoURL} />
+            </Tippy>
+            <Tippy
+              content="Please Sign Out"
+              className="bg-pink-500 text-black font-bold rounded-lg p-3"
+            >
+              <button onClick={handleLogOut} className="btn btn-active">
+                Sign Out
+              </button>
+            </Tippy>
           </>
         ) : (
           <Link to="/login">
-            <button className="btn btn-active">Login</button>
+            <Tippy
+              content="Please Login"
+              className="bg-pink-500 text-black font-bold rounded-lg p-3"
+            >
+              <button className="btn btn-active">Login</button>
+            </Tippy>
           </Link>
         )}
       </div>

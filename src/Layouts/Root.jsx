@@ -4,11 +4,13 @@ import Footer from '../pages/Footer/Footer';
 
 const Root = () => {
   return (
-    <div className="mx-auto">
-      <Navbar></Navbar>
-      <Outlet></Outlet>
-      <Footer></Footer>
-    </div>
+    <>
+      <div className="mx-auto">
+        <Navbar></Navbar>
+        <Outlet></Outlet>
+        <Footer></Footer>
+      </div>
+    </>
   );
 };
 

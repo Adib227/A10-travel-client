@@ -58,7 +58,7 @@ const Register = () => {
   return (
     <div>
       <Helmet>
-        <title>Ten Build - Register</title>
+        <title>IQONIC TRAVEL - Register</title>
       </Helmet>{' '}
       <div>
         <div className="hero min-h-screen bg-base-200 my-12 rounded-lg">

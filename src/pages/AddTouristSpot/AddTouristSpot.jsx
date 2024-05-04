@@ -1,18 +1,21 @@
+import Tippy from '@tippyjs/react';
+import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
 
 const AddTouristSpot = () => {
   // const Swal = require('sweetalert2');
 
   const handleAddSpot = event => {
-    event.preventDefault;
+    event.preventDefault();
 
     const form = event.target;
 
     const name = form.name.value;
+    const spot = form.spot.value;
     const country = form.country.value;
     const location = form.location.value;
-    const email = form.email.value;
     const description = form.description.value;
+    const photo = form.photo.value;
     const cost = form.cost.value;
     const seasonality = form.seasonality.value;
     const visitor = form.visitor.value;
@@ -20,10 +23,11 @@ const AddTouristSpot = () => {
 
     const newSpot = {
       name,
+      spot,
       country,
       location,
-      email,
       description,
+      photo,
       cost,
       seasonality,
       visitor,
@@ -44,7 +48,7 @@ const AddTouristSpot = () => {
         if (data.dataInsertedID) {
           Swal.fire({
             title: 'Success!',
-            text: 'User Added Successfully',
+            text: 'Spot Added Successfully',
             icon: 'success',
             confirmButtonText: 'Cool',
           });
@@ -54,54 +58,54 @@ const AddTouristSpot = () => {
 
   return (
     <div>
-      <section className="p-6 dark:bg-gray-300 dark:text-gray-900">
+      <Helmet>
+        <title>IQONIC TRAVEL - Add User</title>
+      </Helmet>
+      <div className="text-center dark:bg-gray-300 dark:text-gray-900 ">
+        <h1
+          className="text-4xl pt-6 font-semibold"
+          data-aos="fade-right"
+          data-aos-duration="1200"
+        >
+          Add Tourist Spot
+        </h1>
+      </div>
+      <section
+        className=" dark:bg-gray-300 dark:text-gray-900 "
+        data-aos="zoom-in"
+        data-aos-duration="1300"
+      >
         <form
+          onSubmit={handleAddSpot}
           noValidate=""
           action=""
-          className="container flex flex-col mx-auto space-y-12"
+          className="py-8 container flex flex-col mx-auto"
         >
-          <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-200">
-            <div className="space-y-2 col-span-full lg:col-span-1">
-              <img
-                alt=""
-                className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-300"
-                src="https://source.unsplash.com/40x40/?portrait?1"
-              />
-            </div>
-            <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+          <fieldset className="grid grid-cols-3 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-200 ">
+            <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3 px-16 py-6">
               <div className="col-span-full sm:col-span-3">
-                <label htmlFor="firstname" className="text-sm">
-                  Name
+                <label htmlFor="spot" className="text-sm">
+                  Spot Name
                 </label>
                 <input
-                  id="firstname"
+                  id="spot"
                   type="text"
-                  placeholder="First name"
+                  placeholder="Spot name"
                   className="w-full p-4 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
-                <label htmlFor="lastname" className="text-sm">
+                <label htmlFor="country" className="text-sm">
                   Country Name
                 </label>
                 <input
-                  id="lastname"
+                  id="country"
                   type="text"
                   placeholder="Country name"
                   className="w-full p-4 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
-              <div className="col-span-full sm:col-span-3">
-                <label htmlFor="email" className="text-sm">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="Email"
-                  className="w-full p-4 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
-                />
-              </div>
+
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="location" className="text-sm">
                   Location
@@ -114,67 +118,77 @@ const AddTouristSpot = () => {
                 />
               </div>
               <div className="col-span-full">
-                <label htmlFor="address" className="text-sm">
+                <label htmlFor="description" className="text-sm">
                   Short Description
                 </label>
                 <input
-                  id="address"
+                  id="description"
                   type="text"
                   placeholder=""
                   className="w-full p-4 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
+              <div className="col-span-full">
+                <label htmlFor="photo" className="text-sm">
+                  Photo URL
+                </label>
+                <input
+                  id="photo"
+                  type="text"
+                  placeholder="photo"
+                  className="w-full p-4 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300"
+                />
+              </div>
               <div className="col-span-full sm:col-span-2">
-                <label htmlFor="city" className="text-sm">
+                <label htmlFor="cost" className="text-sm">
                   Average Cost
                 </label>
                 <input
-                  id="city"
+                  id="cost"
                   type="text"
-                  placeholder=""
+                  placeholder="e.g 10000"
                   className="w-full p-4 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-2">
-                <label htmlFor="state" className="text-sm">
+                <label htmlFor="seasonality" className="text-sm">
                   Seasonality
                 </label>
                 <input
-                  id="state"
+                  id="seasonality"
                   type="text"
                   placeholder=""
                   className="w-full p-4 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-2">
-                <label htmlFor="zip" className="text-sm">
+                <label htmlFor="time" className="text-sm">
                   Travel Time
                 </label>
                 <input
-                  id="zip"
+                  id="time"
                   type="text"
                   placeholder=""
                   className="w-full p-4 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-2">
-                <label htmlFor="zip" className="text-sm">
+                <label htmlFor="visitor" className="text-sm">
                   Total Visitors Per Year
                 </label>
                 <input
-                  id="zip"
+                  id="visitor"
                   type="text"
-                  placeholder=""
+                  placeholder="e.g 25000"
                   className="w-full p-4 rounded-md focus:ring focus:ring-opacity-75  focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
-
-              <button
-                onSubmit={handleAddSpot}
-                className="btn btn-success mt-8 w-80"
+              <Tippy
+                content="To add, Click here! "
+                className="text-white bg-slate-700 p-4 rounded-lg"
               >
-                ADD
-              </button>
+                <button className="btn btn-success mt-8 w-80">ADD</button>
+              </Tippy>
             </div>
           </fieldset>
         </form>
