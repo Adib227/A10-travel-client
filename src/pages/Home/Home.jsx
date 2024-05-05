@@ -11,6 +11,7 @@ const Home = () => {
       </Helmet>
       <div className="max-w-6xl mx-auto">
         <Banner></Banner>
+        {/* <AllTouristSpotCard></AllTouristSpotCard> */}
         <Extra></Extra>
       </div>
       <div className="max-w-fulls">

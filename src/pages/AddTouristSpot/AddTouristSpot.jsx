@@ -1,6 +1,8 @@
 import Tippy from '@tippyjs/react';
 import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
+import 'animate.css';
+import { data } from 'autoprefixer';
 
 const AddTouristSpot = () => {
   // const Swal = require('sweetalert2');
@@ -45,36 +47,35 @@ const AddTouristSpot = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        if (data.dataInsertedID) {
-          Swal.fire({
-            title: 'Success!',
-            text: 'Spot Added Successfully',
-            icon: 'success',
-            confirmButtonText: 'Cool',
-          });
-        }
       });
   };
+  const handleClick = () => {
+    {
+      Swal.fire({
+        title: 'Success!',
+        text: 'Spot Added Successfully',
+        icon: 'success',
+        confirmButtonText: 'Thank you',
+      });
+    }
+  };
+  console.log(handleClick);
 
   return (
     <div>
       <Helmet>
         <title>IQONIC TRAVEL - Add User</title>
       </Helmet>
-      <div className="text-center dark:bg-gray-300 dark:text-gray-900 ">
-        <h1
-          className="text-4xl pt-6 font-semibold"
-          data-aos="fade-right"
-          data-aos-duration="1200"
-        >
-          Add Tourist Spot
-        </h1>
-      </div>
       <section
         className=" dark:bg-gray-300 dark:text-gray-900 "
         data-aos="zoom-in"
         data-aos-duration="1300"
       >
+        <div className="text-center dark:bg-gray-300 dark:text-gray-900 ">
+          <h1 className="text-violet-700 text-4xl pt-6 font-semibold animate__animated animate__bounceInLeft">
+            Add Tourist Spot
+          </h1>
+        </div>
         <form
           onSubmit={handleAddSpot}
           noValidate=""
@@ -187,7 +188,12 @@ const AddTouristSpot = () => {
                 content="To add, Click here! "
                 className="text-white bg-slate-700 p-4 rounded-lg"
               >
-                <button className="btn btn-success mt-8 w-80">ADD</button>
+                <button
+                  onClick={handleClick}
+                  className="btn btn-success mt-8 w-80"
+                >
+                  ADD
+                </button>
               </Tippy>
             </div>
           </fieldset>
