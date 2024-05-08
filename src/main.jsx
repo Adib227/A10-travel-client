@@ -15,6 +15,7 @@ import AuthProvider from './Providers/AuthProvider.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
 import Update from './pages/Home/Update.jsx';
 import Details from './pages/Home/Details/Details.jsx';
+import DetailsCard from './pages/Home/Details/DetailsCard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,13 +33,14 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/touristSpot'),
       },
       {
-        path: '/details/:_id',
+        path: '/details/:id',
         element: (
           <PrivateRoute>
             <Details></Details>
           </PrivateRoute>
         ),
-        loader: () => fetch('http://localhost:5000/touristSpot/:_id'),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/touristSpot/${params.id}`),
       },
       {
         path: '/addTouristSpot',

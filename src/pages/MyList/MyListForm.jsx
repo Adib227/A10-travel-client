@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const MyListForm = ({ list }) => {
+const MyListForm = ({ list, spots, setSpots }) => {
   const { _id, spot, country, cost, photo } = list;
 
   const handleDelete = _id => {
@@ -28,6 +28,8 @@ const MyListForm = ({ list }) => {
                 text: 'Your spot has been deleted.',
                 icon: 'success',
               });
+              const remaining = spots.filter(spot => spot._id !== _id);
+              setSpots(remaining);
             }
           });
       }

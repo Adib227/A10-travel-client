@@ -17,3 +17,4 @@ Added Packeges:
 1. React Tooltip
 2. Animate.CSS
 3. Sweeper Slider
+4. Lottie react
