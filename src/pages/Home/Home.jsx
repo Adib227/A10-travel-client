@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet';
 import Banner from './Banner';
 import Extra from './Extra';
 import Extratwo from './Extratwo';
-import AllTouristSpotCard from '../AllTouristSpot/AllTouristSpotCard';
 
 const Home = () => {
   return (

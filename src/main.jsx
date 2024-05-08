@@ -15,7 +15,6 @@ import AuthProvider from './Providers/AuthProvider.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
 import Update from './pages/Home/Update.jsx';
 import Details from './pages/Home/Details/Details.jsx';
-import DetailsCard from './pages/Home/Details/DetailsCard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +25,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+        // loader: () => fetch('/Fakedata.json'),
       },
       {
         path: '/allTouristSpot',

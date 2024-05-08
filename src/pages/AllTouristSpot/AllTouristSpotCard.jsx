@@ -32,7 +32,7 @@ const AllTouristSpotCard = ({ place }) => {
             <h2 className="text-xl font-medium"> Travel time : {time}</h2>
             <h2 className="text-xl font-medium">Average Cost : {cost}</h2>
             <div className="card-actions">
-              <Link to={`/alltoristspot/${_id}`}>
+              <Link to={`/details/${_id}`}>
                 <button className="btn btn-primary">View Details</button>
               </Link>
             </div>
