@@ -142,7 +142,7 @@ const Footer = () => {
               >
                 <Tippy
                   content="Instagram"
-                  className="text-black font-semibold bg-pink-300 p-2 rounded-md"
+                  className="text-black font-semibold bg-pink-500 p-2 rounded-md"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

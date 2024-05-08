@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet';
 import Banner from './Banner';
 import Extra from './Extra';
 import Extratwo from './Extratwo';
+import AllTouristSpotCard from '../AllTouristSpot/AllTouristSpotCard';
 
 const Home = () => {
   return (
@@ -11,7 +12,6 @@ const Home = () => {
       </Helmet>
       <div className="max-w-6xl mx-auto">
         <Banner></Banner>
-        {/* <AllTouristSpotCard></AllTouristSpotCard> */}
         <Extra></Extra>
       </div>
       <div className="max-w-fulls">

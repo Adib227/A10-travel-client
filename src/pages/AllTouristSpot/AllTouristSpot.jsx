@@ -9,12 +9,20 @@ const AllTouristSpot = () => {
 
   return (
     <>
-      <h1 className="animate__animated animate__bounceInLeft text-center text-4xl  py-12 font-bold text-pink-500">
-        All Tourist Page
-      </h1>
-      {spots.map(place => (
-        <AllTouristSpotCard key={place._id} place={place}></AllTouristSpotCard>
-      ))}
+      <div>
+        <Helmet>
+          <title>IQONIC Travel - All Spot</title>
+        </Helmet>
+        <h1 className="animate__animated animate__bounceInLeft text-center text-4xl  py-12 font-bold text-pink-500">
+          All Tourist Page
+        </h1>
+        {spots.map(place => (
+          <AllTouristSpotCard
+            key={place._id}
+            place={place}
+          ></AllTouristSpotCard>
+        ))}
+      </div>
       {/* <AllTouristSpotCard></AllTouristSpotCard> */}
     </>
   );

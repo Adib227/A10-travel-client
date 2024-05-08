@@ -14,6 +14,7 @@ import Register from './pages/Register/Register.jsx';
 import AuthProvider from './Providers/AuthProvider.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
 import Update from './pages/Home/Update.jsx';
+import Details from './pages/Home/Details/Details.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,9 +27,18 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: '/allTOuristSpot',
+        path: '/allTouristSpot',
         element: <AllTouristSpot></AllTouristSpot>,
         loader: () => fetch('http://localhost:5000/touristSpot'),
+      },
+      {
+        path: '/details/:_id',
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+        loader: () => fetch('http://localhost:5000/touristSpot/:_id'),
       },
       {
         path: '/addTouristSpot',
@@ -45,6 +55,7 @@ const router = createBrowserRouter([
             <MyList></MyList>
           </PrivateRoute>
         ),
+        loader: () => fetch('http://localhost:5000/touristSpot'),
       },
       {
         path: '/login',
@@ -55,8 +66,10 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: '/updatePage',
+        path: '/updatePage/:id',
         element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/touristSpot/${params.id}`),
       },
     ],
   },

@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 const AllTouristSpotCard = ({ place }) => {
-  const { photo, country, time, seasonality, cost, spot, visitor } = place;
+  const { photo, country, time, seasonality, cost, spot, visitor, _id } = place;
 
   return (
     <div className="">
@@ -30,9 +31,11 @@ const AllTouristSpotCard = ({ place }) => {
             </h2>
             <h2 className="text-xl font-medium"> Travel time : {time}</h2>
             <h2 className="text-xl font-medium">Average Cost : {cost}</h2>
-            {/* <div className="card-actions">
-              <button className="btn btn-primary">View Details</button>
-            </div> */}
+            <div className="card-actions">
+              <Link to={`/alltoristspot/${_id}`}>
+                <button className="btn btn-primary">View Details</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

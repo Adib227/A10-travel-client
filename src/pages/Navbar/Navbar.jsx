@@ -47,9 +47,9 @@ const Navbar = () => {
         <>
           {' '}
           <li>
-            <NavLink className to="/updatePage">
+            {/* <NavLink className to="/updatePage">
               Update Page
-            </NavLink>
+            </NavLink> */}
           </li>{' '}
         </>
       )}

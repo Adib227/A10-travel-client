@@ -1,43 +1,17 @@
-import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import MyListForm from './MyListForm';
 
-const MyList = () => {
+const MyList = ({}) => {
+  const spots = useLoaderData();
+  console.log(spots);
+
   return (
-    <div className="overflow-x-auto max-w-7xl mx-auto p-14 bg-gray-300">
-      <table className="table table-zebra">
-        {/* head */}
-        <thead>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Favorite Color</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* row 1 */}
-          <tr>
-            <th>1</th>
-            <td>Cy Ganderton</td>
-            <td>Quality Control Specialist</td>
-            <td>Blue</td>
-          </tr>
-          {/* row 2 */}
-          <tr>
-            <th>2</th>
-            <td>Hart Hagerty</td>
-            <td>Desktop Support Technician</td>
-            <td>Purple</td>
-          </tr>
-          {/* row 3 */}
-          <tr>
-            <th>3</th>
-            <td>Brice Swyre</td>
-            <td>Tax Accountant</td>
-            <td>Red</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <>
+      <h1 className="text-5xl font-bold text-center">My List</h1>
+      {spots.map(list => (
+        <MyListForm key={list._id} list={list}></MyListForm>
+      ))}
+    </>
   );
 };
 
