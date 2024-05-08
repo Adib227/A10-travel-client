@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import 'animate.css';
 
 const Details = () => {
